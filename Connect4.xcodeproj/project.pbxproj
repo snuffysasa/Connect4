@@ -14,6 +14,15 @@
 		DA2E3ACA196C56B000A28DC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AC8196C56B000A28DC4 /* Main.storyboard */; };
 		DA2E3ACC196C56B000A28DC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3ACB196C56B000A28DC4 /* Images.xcassets */; };
 		DA2E3AD8196C56B100A28DC4 /* Connect4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AD7196C56B100A28DC4 /* Connect4Tests.swift */; };
+		DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE2196C56DB00A28DC4 /* youwin.png */; };
+		DA2E3AE8196C56DB00A28DC4 /* redchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE3196C56DB00A28DC4 /* redchip.png */; };
+		DA2E3AE9196C56DB00A28DC4 /* bluechip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE4196C56DB00A28DC4 /* bluechip.png */; };
+		DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE5196C56DB00A28DC4 /* greenchip.png */; };
+		DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE6196C56DB00A28DC4 /* Board.png */; };
+		DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AEC196C56E500A28DC4 /* wall1.png */; };
+		DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AED196C56E500A28DC4 /* red.jpg */; };
+		DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AEE196C56E500A28DC4 /* green.jpg */; };
+		DA2E3AF3196C56EF00A28DC4 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AF2196C56EF00A28DC4 /* Chip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,15 @@
 		DA2E3AD1196C56B000A28DC4 /* Connect4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Connect4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2E3AD6196C56B100A28DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2E3AD7196C56B100A28DC4 /* Connect4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4Tests.swift; sourceTree = "<group>"; };
+		DA2E3AE2196C56DB00A28DC4 /* youwin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youwin.png; sourceTree = "<group>"; };
+		DA2E3AE3196C56DB00A28DC4 /* redchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redchip.png; sourceTree = "<group>"; };
+		DA2E3AE4196C56DB00A28DC4 /* bluechip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechip.png; sourceTree = "<group>"; };
+		DA2E3AE5196C56DB00A28DC4 /* greenchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenchip.png; sourceTree = "<group>"; };
+		DA2E3AE6196C56DB00A28DC4 /* Board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Board.png; sourceTree = "<group>"; };
+		DA2E3AEC196C56E500A28DC4 /* wall1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall1.png; sourceTree = "<group>"; };
+		DA2E3AED196C56E500A28DC4 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
+		DA2E3AEE196C56E500A28DC4 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
+		DA2E3AF2196C56EF00A28DC4 /* Chip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +97,11 @@
 		DA2E3ABD196C56B000A28DC4 /* Connect4 */ = {
 			isa = PBXGroup;
 			children = (
+				DA2E3AC4196C56B000A28DC4 /* GameScene.swift */,
+				DA2E3AF2196C56EF00A28DC4 /* Chip.swift */,
+				DA2E3AE1196C56C700A28DC4 /* images */,
 				DA2E3AC0196C56B000A28DC4 /* AppDelegate.swift */,
 				DA2E3AC2196C56B000A28DC4 /* GameScene.sks */,
-				DA2E3AC4196C56B000A28DC4 /* GameScene.swift */,
 				DA2E3AC6196C56B000A28DC4 /* GameViewController.swift */,
 				DA2E3AC8196C56B000A28DC4 /* Main.storyboard */,
 				DA2E3ACB196C56B000A28DC4 /* Images.xcassets */,
@@ -113,6 +133,21 @@
 				DA2E3AD6196C56B100A28DC4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA2E3AE1196C56C700A28DC4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E3AEC196C56E500A28DC4 /* wall1.png */,
+				DA2E3AED196C56E500A28DC4 /* red.jpg */,
+				DA2E3AEE196C56E500A28DC4 /* green.jpg */,
+				DA2E3AE2196C56DB00A28DC4 /* youwin.png */,
+				DA2E3AE3196C56DB00A28DC4 /* redchip.png */,
+				DA2E3AE4196C56DB00A28DC4 /* bluechip.png */,
+				DA2E3AE5196C56DB00A28DC4 /* greenchip.png */,
+				DA2E3AE6196C56DB00A28DC4 /* Board.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +199,7 @@
 				TargetAttributes = {
 					DA2E3ABA196C56B000A28DC4 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = GHDE8Y7S4H;
 					};
 					DA2E3AD0196C56B000A28DC4 = {
 						CreatedOnToolsVersion = 6.0;
@@ -195,8 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */,
+				DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */,
+				DA2E3AE9196C56DB00A28DC4 /* bluechip.png in Resources */,
+				DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */,
+				DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */,
+				DA2E3AE8196C56DB00A28DC4 /* redchip.png in Resources */,
 				DA2E3ACC196C56B000A28DC4 /* Images.xcassets in Resources */,
+				DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */,
 				DA2E3AC3196C56B000A28DC4 /* GameScene.sks in Resources */,
+				DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */,
 				DA2E3ACA196C56B000A28DC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2E3AC5196C56B000A28DC4 /* GameScene.swift in Sources */,
+				DA2E3AF3196C56EF00A28DC4 /* Chip.swift in Sources */,
 				DA2E3AC7196C56B000A28DC4 /* GameViewController.swift in Sources */,
 				DA2E3AC1196C56B000A28DC4 /* AppDelegate.swift in Sources */,
 			);
@@ -335,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Connect4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Connect4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
