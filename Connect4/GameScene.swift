@@ -21,17 +21,11 @@ class GameScene: SKScene {
     var arrayChips: [Chip] = []
     
     var background = SKSpriteNode(imageNamed: "wall1.png")
-    var win = SKSpriteNode(imageNamed: "youwin.png")
+    var greenwins = SKSpriteNode(imageNamed: "greenwins.png")
+    var redwins = SKSpriteNode(imageNamed: "redwins.png")
+    var reset = SKSpriteNode(imageNamed: "reset.png")
     var board = SKSpriteNode(imageNamed: "Board.png")
-    var myLabel1 = SKLabelNode(text: "meow")
-    var myLabel2 = SKLabelNode(text: "meow")
-    var myLabel3 = SKLabelNode(text: "meow")
-    var myLabel4 = SKLabelNode(text: "meow")
-    var myLabel5 = SKLabelNode(text: "meow")
-    var myLabel6 = SKLabelNode(text: "meow")
-    var myLabel7 = SKLabelNode(text: "meow")
-    var myLabel8 = SKLabelNode(text: "meow")
-    var myLabel9 = SKLabelNode(text: "meow")
+
     
     
     
@@ -44,19 +38,26 @@ class GameScene: SKScene {
         board.position = CGPoint(x: 223, y: 0)
         board.setScale(0.9)
         
-        win.position = CGPoint(x: 500, y: 630)
-        win.hidden = true
-        win.setScale(0.5)
+        greenwins.position = CGPoint(x: 500, y: 630)
+        greenwins.hidden = true
+        greenwins.setScale(0.5)
         
-        myLabel2.position = CGPoint(x: 500, y: 700)
+        redwins.position = CGPoint(x: 500, y: 630)
+        redwins.hidden = true
+        redwins.setScale(0.5)
+        
+        reset.position = CGPoint(x: 511, y: 500)
+        reset.setScale(0.25)
+        reset.hidden = true
+        
 
         
         
         self.addChild(background)
-        self.addChild(win)
+        self.addChild(greenwins)
+        self.addChild(redwins)
+        self.addChild(reset)
         self.addChild(board)
-        self.addChild(myLabel2)
-        myLabel2.hidden = true
 
         
         
@@ -124,6 +125,14 @@ class GameScene: SKScene {
     
     func resetGame() {
         gameover = false
+        reset.hidden = true
+        redwins.hidden = true
+        greenwins.hidden = true
+        for eachChip in arrayChips {
+            eachChip.removeFromParent()
+        }
+        arrayChips = []
+        
     }
     
     func noChipFalling() -> Bool {
@@ -259,13 +268,16 @@ class GameScene: SKScene {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
-            if touch.locationInNode(self).y > 450 {
+            if touch.locationInNode(self).y > 450 && !gameover {
                 addChip(touch.locationInNode(self))
             }
             
-
-            
+            if CGRectContainsPoint(reset.frame, touch.locationInNode(self)) && gameover {
+                resetGame()
+            }
         }
+        
+        
     }
     
     func aboveChip(position: CGPoint) -> Bool {
@@ -413,18 +425,26 @@ class GameScene: SKScene {
                     allignChip(theChip)
                     updateNearChips(theChip)
                     checkforWin(theChip)
-                    if gameover {
-                        myLabel2.text = "\(theChip.chipColor) Wins!!!"
-                        myLabel2.hidden = false
+                    if gameover && theChip.chipColor == "green"{
+                        greenwins.hidden = false
+                        reset.hidden = false
+                    }
+                    if gameover && theChip.chipColor == "red"{
+                        redwins.hidden = false
+                        reset.hidden = false
                     }
                 }
                 if theChip.position.y <= 35 {
                     allignChip(theChip)
                     updateNearChips(theChip)
                     checkforWin(theChip)
-                    if gameover {
-                        myLabel2.text = "\(theChip.chipColor) Wins!!!"
-                        myLabel2.hidden = false
+                    if gameover && theChip.chipColor == "green"{
+                        greenwins.hidden = false
+                        reset.hidden = false
+                    }
+                    if gameover && theChip.chipColor == "red"{
+                        redwins.hidden = false
+                        reset.hidden = false
                     }
                 }
                 if theChip.falling {

@@ -23,6 +23,9 @@
 		DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AED196C56E500A28DC4 /* red.jpg */; };
 		DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AEE196C56E500A28DC4 /* green.jpg */; };
 		DA2E3AF3196C56EF00A28DC4 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AF2196C56EF00A28DC4 /* Chip.swift */; };
+		DA2E3B43196DF86A00A28DC4 /* redwins.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B41196DF86A00A28DC4 /* redwins.png */; };
+		DA2E3B44196DF86A00A28DC4 /* greenwins.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B42196DF86A00A28DC4 /* greenwins.png */; };
+		DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B45196DFBFA00A28DC4 /* reset.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		DA2E3AED196C56E500A28DC4 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
 		DA2E3AEE196C56E500A28DC4 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
 		DA2E3AF2196C56EF00A28DC4 /* Chip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chip.swift; sourceTree = "<group>"; };
+		DA2E3B41196DF86A00A28DC4 /* redwins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redwins.png; sourceTree = "<group>"; };
+		DA2E3B42196DF86A00A28DC4 /* greenwins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenwins.png; sourceTree = "<group>"; };
+		DA2E3B45196DFBFA00A28DC4 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 		DA2E3AE1196C56C700A28DC4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DA2E3B45196DFBFA00A28DC4 /* reset.png */,
+				DA2E3B41196DF86A00A28DC4 /* redwins.png */,
+				DA2E3B42196DF86A00A28DC4 /* greenwins.png */,
 				DA2E3AEC196C56E500A28DC4 /* wall1.png */,
 				DA2E3AED196C56E500A28DC4 /* red.jpg */,
 				DA2E3AEE196C56E500A28DC4 /* green.jpg */,
@@ -232,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */,
+				DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */,
 				DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */,
 				DA2E3AE9196C56DB00A28DC4 /* bluechip.png in Resources */,
 				DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */,
@@ -241,7 +251,9 @@
 				DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */,
 				DA2E3AC3196C56B000A28DC4 /* GameScene.sks in Resources */,
 				DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */,
+				DA2E3B44196DF86A00A28DC4 /* greenwins.png in Resources */,
 				DA2E3ACA196C56B000A28DC4 /* Main.storyboard in Resources */,
+				DA2E3B43196DF86A00A28DC4 /* redwins.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +464,7 @@
 				DA2E3ADD196C56B100A28DC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA2E3ADE196C56B100A28DC4 /* Build configuration list for PBXNativeTarget "Connect4Tests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +473,7 @@
 				DA2E3AE0196C56B100A28DC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
