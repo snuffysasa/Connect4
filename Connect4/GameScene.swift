@@ -13,8 +13,8 @@ class GameScene: SKScene {
     var counter = 1
     var gameover = false
     
-    var previousTime: CFTimeInterval = 0
-    var timeCounter: CFTimeInterval = 0
+//    var previousTime: CFTimeInterval = 0
+//    var timeCounter: CFTimeInterval = 0
     
     
     var greenTurn: Bool = true
@@ -105,13 +105,23 @@ class GameScene: SKScene {
     
     
     func addChip(position: CGPoint) {
-        var newChip = Chip(imageNamed: "greenchip")
+        var topFilled = false
+        
+        for anychip in arrayChips {
+            if anychip.position.x == whatRow(position.x) && anychip.position.y == 394 {
+                topFilled = true
+            }
+        }
+        
+        if !topFilled {
+            var newChip = Chip(imageNamed: "greenchip")
+        
         if greenTurn {
             newChip.texture = SKTexture(imageNamed: "greenchip")
             newChip.chipColor = "green"
             greenTurn = false
         }
-        else if greenTurn == false {
+        else if !greenTurn {
             newChip.texture = SKTexture(imageNamed: "redchip")
             newChip.chipColor = "red"
             greenTurn = true
@@ -121,6 +131,7 @@ class GameScene: SKScene {
         newChip.setScale(0.32)
         self.addChild(newChip)
         arrayChips += newChip
+        }
     }
     
     func resetGame() {
@@ -407,52 +418,45 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        if previousTime == 0 {
-            previousTime = currentTime
-        }
-        timeCounter += currentTime - previousTime
-        if timeCounter > 0.0166667 {
-            timeCounter = 0
-            
-        }
-        previousTime = currentTime
+//        if previousTime == 0 {
+//            previousTime = currentTime
+//        }
+//        timeCounter += currentTime - previousTime
+//        if timeCounter > 0.0166667 {
+//            timeCounter = 0
+//            
+//        }
+//        previousTime = currentTime
         
         for theChip in arrayChips {
             
             if theChip.falling {
                 
-                if aboveChip(theChip.position) {
+                theChip.position.y += -10
+                theChip.zRotation += 3
+                
+                if aboveChip(theChip.position) || theChip.position.y <= 35 {
                     allignChip(theChip)
                     updateNearChips(theChip)
                     checkforWin(theChip)
-                    if gameover && theChip.chipColor == "green"{
-                        greenwins.hidden = false
+                    if gameover {
+                        if theChip.chipColor == "green" {
+                            greenwins.hidden = false
+                        } else { redwins.hidden = false }
                         reset.hidden = false
+                        for anyChip in arrayChips {
+                            if anyChip.falling {
+                                anyChip.removeFromParent()
+                                anyChip.falling = false
+                            }
+                        }
                     }
-                    if gameover && theChip.chipColor == "red"{
-                        redwins.hidden = false
-                        reset.hidden = false
-                    }
+
                 }
-                if theChip.position.y <= 35 {
-                    allignChip(theChip)
-                    updateNearChips(theChip)
-                    checkforWin(theChip)
-                    if gameover && theChip.chipColor == "green"{
-                        greenwins.hidden = false
-                        reset.hidden = false
-                    }
-                    if gameover && theChip.chipColor == "red"{
-                        redwins.hidden = false
-                        reset.hidden = false
-                    }
-                }
-                if theChip.falling {
-                    theChip.position.y += -10
-                    theChip.zRotation += 3
-                }
+
                 
             }
+
             
         }
         
