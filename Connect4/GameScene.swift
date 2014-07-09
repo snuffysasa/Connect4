@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var counter = 1
+    var gameover = false
     
     var previousTime: CFTimeInterval = 0
     var timeCounter: CFTimeInterval = 0
@@ -46,29 +48,16 @@ class GameScene: SKScene {
         win.hidden = true
         win.setScale(0.5)
         
-        myLabel1.position = CGPoint(x: 300, y: 700)
         myLabel2.position = CGPoint(x: 500, y: 700)
-        myLabel3.position = CGPoint(x: 700, y: 700)
-        myLabel4.position = CGPoint(x: 300, y: 630)
-        myLabel5.position = CGPoint(x: 500, y: 630)
-        myLabel6.position = CGPoint(x: 700, y: 630)
-        myLabel7.position = CGPoint(x: 300, y: 530)
-        myLabel8.position = CGPoint(x: 500, y: 530)
-        myLabel9.position = CGPoint(x: 700, y: 530)
+
         
         
         self.addChild(background)
         self.addChild(win)
         self.addChild(board)
-        self.addChild(myLabel1)
         self.addChild(myLabel2)
-        self.addChild(myLabel3)
-        self.addChild(myLabel4)
-        self.addChild(myLabel5)
-        self.addChild(myLabel6)
-        self.addChild(myLabel7)
-        self.addChild(myLabel8)
-        self.addChild(myLabel9)
+        myLabel2.hidden = true
+
         
         
     }
@@ -112,35 +101,6 @@ class GameScene: SKScene {
     }
     
     
-    func updateLabels(touchLocation: CGPoint) {
-        //myLabel1.text = String(whatRow(touchLocation.x))
-        //myLabel2.text = String(whatHeight(touchLocation.y))
-        myLabel1.text = "empty"
-        myLabel2.text = "empty"
-        myLabel3.text = "empty"
-        myLabel4.text = "empty"
-        myLabel5.text = "empty"
-        myLabel6.text = "empty"
-        myLabel7.text = "empty"
-        myLabel8.text = "empty"
-        myLabel9.text = "emptY"
-        for theChip in arrayChips {
-            var correctColumn = whatRow(touchLocation.x)
-            var correctRow = whatHeight(touchLocation.y)
-            if correctColumn == theChip.position.x && correctRow == theChip.position.y {
-                myLabel1.text = theChip.chipUpLeft
-                myLabel2.text = theChip.chipUp
-                myLabel3.text = theChip.chipUpRight
-                myLabel4.text = theChip.chipLeft
-                myLabel5.text = theChip.chipColor
-                myLabel6.text = theChip.chipRight
-                myLabel7.text = theChip.chipDownLeft
-                myLabel8.text = theChip.chipDown
-                myLabel9.text = theChip.chipDownRight
-            }
-            
-        }
-    }
     
     
     func addChip(position: CGPoint) {
@@ -162,6 +122,10 @@ class GameScene: SKScene {
         arrayChips += newChip
     }
     
+    func resetGame() {
+        gameover = false
+    }
+    
     func noChipFalling() -> Bool {
         for chip in arrayChips {
             if chip.falling {
@@ -170,6 +134,125 @@ class GameScene: SKScene {
         }
         return true
     }
+    
+    func checkforWinHelper(location: CGPoint, direction: String) {
+        //myLabel1.text = String(counter)
+        if counter == 4 {
+            gameover = true
+        }
+        for theChip in arrayChips {
+            var correctColumn = whatRow(location.x)
+            var correctRow = whatHeight(location.y)
+            var correctChip: Bool = correctColumn == theChip.position.x && correctRow == theChip.position.y
+            
+            if correctChip && direction == "Left" {
+                if theChip.chipColor == theChip.chipLeft {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x - 80), y: theChip.position.y), direction: "Left")
+                }
+            }
+            
+            if correctChip && direction == "Right" {
+                if theChip.chipColor == theChip.chipRight {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x + 80), y: theChip.position.y), direction: "Right")
+                }
+            }
+            
+            if correctChip && direction == "Down" {
+                if theChip.chipColor == theChip.chipDown {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x), y: (theChip.position.y - 72)), direction: "Down")
+                }
+            }
+            
+            if correctChip && direction == "UpLeft" {
+                if theChip.chipColor == theChip.chipUpLeft {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x - 80), y: (theChip.position.y + 72)), direction: "UpLeft")
+                }
+            }
+            
+            if correctChip && direction == "UpRight" {
+                if theChip.chipColor == theChip.chipUpRight {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x + 80), y: (theChip.position.y + 72)), direction: "UpRight")
+                }
+            }
+            
+            if correctChip && direction == "DownRight" {
+                if theChip.chipColor == theChip.chipDownRight {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x + 80), y: (theChip.position.y - 72)), direction: "DownRight")
+                }
+            }
+            
+            if correctChip && direction == "DownLeft" {
+                if theChip.chipColor == theChip.chipDownLeft {
+                    counter++
+                    checkforWinHelper(CGPoint(x: (theChip.position.x - 80), y: (theChip.position.y - 72)), direction: "DownLeft")
+                }
+            }
+        }
+        
+    }
+    
+    func checkforWin(theChip: Chip) {
+        //counter = 1
+        
+//            var xDistance = centerChip.position.x - nearbyChip.position.x
+//            var yDistance = centerChip.position.y - nearbyChip.position.y
+//            var sameChip: Bool = nearbyChip == centerChip
+//            var sameRow: Bool = nearbyChip.position.y == centerChip.position.y
+//            var sameColumn: Bool = nearbyChip.position.x == centerChip.position.x
+//            var nearbyIsOneColumnLeft: Bool = xDistance >= 75 && xDistance <= 85
+//            var nearbyIsOneColumnRight: Bool = xDistance <= -75 && xDistance >= -85
+//            var nearbyIsOneRowDown: Bool = yDistance >= 70 && yDistance <= 75
+//            var nearbyIsOneRowUp: Bool = yDistance <= -70 && yDistance >= -75
+            
+        if theChip.chipColor == theChip.chipLeft {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "Left")
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "Right")
+        }
+        if theChip.chipColor == theChip.chipRight {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "Right")
+        }
+        
+        if theChip.chipColor == theChip.chipDown {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "Down")
+        }
+        
+        if theChip.chipColor == theChip.chipUpLeft {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "UpLeft")
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "DownRight")
+        }
+        
+        if theChip.chipColor == theChip.chipDownRight {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "DownRight")
+        }
+        
+        if theChip.chipColor == theChip.chipUpRight {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "UpRight")
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "DownLeft")
+        }
+        
+        if theChip.chipColor == theChip.chipDownLeft {
+            counter = 1
+            checkforWinHelper(CGPoint(x: (theChip.position.x), y: theChip.position.y), direction: "DownLeft")
+        }
+    }
+    
+        
+        
+
+        
+
     
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -180,9 +263,7 @@ class GameScene: SKScene {
                 addChip(touch.locationInNode(self))
             }
             
-            if touch.locationInNode(self).y < 400 {
-                updateLabels(touch.locationInNode(self))
-            }
+
             
         }
     }
@@ -331,11 +412,20 @@ class GameScene: SKScene {
                 if aboveChip(theChip.position) {
                     allignChip(theChip)
                     updateNearChips(theChip)
-                    //myLabel.text = "the chip below me is \(theChip.chipDown) "
+                    checkforWin(theChip)
+                    if gameover {
+                        myLabel2.text = "\(theChip.chipColor) Wins!!!"
+                        myLabel2.hidden = false
+                    }
                 }
                 if theChip.position.y <= 35 {
                     allignChip(theChip)
                     updateNearChips(theChip)
+                    checkforWin(theChip)
+                    if gameover {
+                        myLabel2.text = "\(theChip.chipColor) Wins!!!"
+                        myLabel2.hidden = false
+                    }
                 }
                 if theChip.falling {
                     theChip.position.y += -10
