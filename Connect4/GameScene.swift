@@ -21,6 +21,14 @@ class GameScene: SKScene {
     var arrayChips: [Chip] = []
     
     var background = SKSpriteNode(imageNamed: "wall1.png")
+    var turnlight = SKSpriteNode(imageNamed: "greenlight")
+    
+    var redback = SKTexture(imageNamed: "red.jpg")
+    var greenback = SKTexture(imageNamed: "green.jpg")
+    var redlight = SKTexture(imageNamed: "redlight.png")
+    var greenlight = SKTexture(imageNamed: "greenlight.png")
+
+
     var greenwins = SKSpriteNode(imageNamed: "greenwins.png")
     var redwins = SKSpriteNode(imageNamed: "redwins.png")
     var reset = SKSpriteNode(imageNamed: "reset.png")
@@ -37,6 +45,9 @@ class GameScene: SKScene {
         board.anchorPoint = CGPoint(x: 0, y: 0)
         board.position = CGPoint(x: 223, y: 0)
         board.setScale(0.9)
+        
+        turnlight.position = CGPoint(x: 513, y: 720)
+        turnlight.setScale(0.25)
         
         greenwins.position = CGPoint(x: 500, y: 630)
         greenwins.hidden = true
@@ -58,6 +69,7 @@ class GameScene: SKScene {
         self.addChild(redwins)
         self.addChild(reset)
         self.addChild(board)
+        self.addChild(turnlight)
 
         
         
@@ -106,9 +118,16 @@ class GameScene: SKScene {
     
     func addChip(position: CGPoint) {
         var topFilled = false
+        var chipsInRow = 0
         
         for anychip in arrayChips {
-            if anychip.position.x == whatRow(position.x) && anychip.position.y == 394 {
+            if anychip.position.x == whatRow(position.x) {
+                chipsInRow++
+                if chipsInRow >= 6 {
+                    topFilled = true
+                }
+            }
+            if anychip.position.x == whatRow(position.x) && (position.y - anychip.position.y) < 90 {
                 topFilled = true
             }
         }
@@ -120,11 +139,13 @@ class GameScene: SKScene {
             newChip.texture = SKTexture(imageNamed: "greenchip")
             newChip.chipColor = "green"
             greenTurn = false
+            turnlight.texture = redlight
         }
         else if !greenTurn {
             newChip.texture = SKTexture(imageNamed: "redchip")
             newChip.chipColor = "red"
             greenTurn = true
+            turnlight.texture = greenlight
         }
         
         newChip.position = CGPoint(x: whatRow(position.x), y: position.y)

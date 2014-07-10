@@ -26,6 +26,8 @@
 		DA2E3B43196DF86A00A28DC4 /* redwins.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B41196DF86A00A28DC4 /* redwins.png */; };
 		DA2E3B44196DF86A00A28DC4 /* greenwins.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B42196DF86A00A28DC4 /* greenwins.png */; };
 		DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B45196DFBFA00A28DC4 /* reset.png */; };
+		DA2E3B49196E10DC00A28DC4 /* redlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B47196E10DC00A28DC4 /* redlight.png */; };
+		DA2E3B4A196E10DC00A28DC4 /* greenlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B48196E10DC00A28DC4 /* greenlight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		DA2E3B41196DF86A00A28DC4 /* redwins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redwins.png; sourceTree = "<group>"; };
 		DA2E3B42196DF86A00A28DC4 /* greenwins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenwins.png; sourceTree = "<group>"; };
 		DA2E3B45196DFBFA00A28DC4 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
+		DA2E3B47196E10DC00A28DC4 /* redlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redlight.png; sourceTree = "<group>"; };
+		DA2E3B48196E10DC00A28DC4 /* greenlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenlight.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 		DA2E3AE1196C56C700A28DC4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DA2E3B47196E10DC00A28DC4 /* redlight.png */,
+				DA2E3B48196E10DC00A28DC4 /* greenlight.png */,
 				DA2E3B45196DFBFA00A28DC4 /* reset.png */,
 				DA2E3B41196DF86A00A28DC4 /* redwins.png */,
 				DA2E3B42196DF86A00A28DC4 /* greenwins.png */,
@@ -247,8 +253,10 @@
 				DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */,
 				DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */,
 				DA2E3AE8196C56DB00A28DC4 /* redchip.png in Resources */,
+				DA2E3B49196E10DC00A28DC4 /* redlight.png in Resources */,
 				DA2E3ACC196C56B000A28DC4 /* Images.xcassets in Resources */,
 				DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */,
+				DA2E3B4A196E10DC00A28DC4 /* greenlight.png in Resources */,
 				DA2E3AC3196C56B000A28DC4 /* GameScene.sks in Resources */,
 				DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */,
 				DA2E3B44196DF86A00A28DC4 /* greenwins.png in Resources */,
