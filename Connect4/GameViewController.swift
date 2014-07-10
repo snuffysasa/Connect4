@@ -18,7 +18,7 @@ extension SKNode {
         var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
         
         archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-        let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
+        let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as MenuScene
         archiver.finishDecoding()
         return scene
     }
@@ -29,10 +29,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        if let scene = MenuScene.unarchiveFromFile("GameScene") as? MenuScene {
             // Configure the view.
             let skView = self.view as SKView
-            skView.showsFPS = true
+            //skView.showsFPS = true
             //skView.showsNodeCount = true
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */

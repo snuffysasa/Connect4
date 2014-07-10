@@ -13,9 +13,6 @@ class GameScene: SKScene {
     var counter = 1
     var gameover = false
     
-//    var previousTime: CFTimeInterval = 0
-//    var timeCounter: CFTimeInterval = 0
-    
     
     var greenTurn: Bool = true
     var arrayChips: [Chip] = []
@@ -439,15 +436,6 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-//        if previousTime == 0 {
-//            previousTime = currentTime
-//        }
-//        timeCounter += currentTime - previousTime
-//        if timeCounter > 0.0166667 {
-//            timeCounter = 0
-//            
-//        }
-//        previousTime = currentTime
         
         for theChip in arrayChips {
             

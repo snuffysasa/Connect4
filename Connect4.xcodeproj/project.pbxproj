@@ -28,6 +28,8 @@
 		DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B45196DFBFA00A28DC4 /* reset.png */; };
 		DA2E3B49196E10DC00A28DC4 /* redlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B47196E10DC00A28DC4 /* redlight.png */; };
 		DA2E3B4A196E10DC00A28DC4 /* greenlight.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B48196E10DC00A28DC4 /* greenlight.png */; };
+		DA2E3B4E196E190300A28DC4 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3B4D196E190300A28DC4 /* MenuScene.swift */; };
+		DA2E3B50196E206900A28DC4 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3B4F196E206900A28DC4 /* start.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		DA2E3B45196DFBFA00A28DC4 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 		DA2E3B47196E10DC00A28DC4 /* redlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redlight.png; sourceTree = "<group>"; };
 		DA2E3B48196E10DC00A28DC4 /* greenlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenlight.png; sourceTree = "<group>"; };
+		DA2E3B4D196E190300A28DC4 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		DA2E3B4F196E206900A28DC4 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				DA2E3AC4196C56B000A28DC4 /* GameScene.swift */,
 				DA2E3AF2196C56EF00A28DC4 /* Chip.swift */,
+				DA2E3B4D196E190300A28DC4 /* MenuScene.swift */,
 				DA2E3AE1196C56C700A28DC4 /* images */,
 				DA2E3AC0196C56B000A28DC4 /* AppDelegate.swift */,
 				DA2E3AC2196C56B000A28DC4 /* GameScene.sks */,
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2E3B47196E10DC00A28DC4 /* redlight.png */,
+				DA2E3B4F196E206900A28DC4 /* start.png */,
 				DA2E3B48196E10DC00A28DC4 /* greenlight.png */,
 				DA2E3B45196DFBFA00A28DC4 /* reset.png */,
 				DA2E3B41196DF86A00A28DC4 /* redwins.png */,
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */,
+				DA2E3B50196E206900A28DC4 /* start.png in Resources */,
 				DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */,
 				DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */,
 				DA2E3AE9196C56DB00A28DC4 /* bluechip.png in Resources */,
@@ -281,6 +288,7 @@
 			files = (
 				DA2E3AC5196C56B000A28DC4 /* GameScene.swift in Sources */,
 				DA2E3AF3196C56EF00A28DC4 /* Chip.swift in Sources */,
+				DA2E3B4E196E190300A28DC4 /* MenuScene.swift in Sources */,
 				DA2E3AC7196C56B000A28DC4 /* GameViewController.swift in Sources */,
 				DA2E3AC1196C56B000A28DC4 /* AppDelegate.swift in Sources */,
 			);
