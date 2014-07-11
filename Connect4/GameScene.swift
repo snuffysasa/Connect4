@@ -12,13 +12,19 @@ class GameScene: SKScene {
     
     var counter = 1
     var gameover = false
-    
+    var mode = 4
+    var player1 = ""
+    var player2 = ""
+    var player1Color = ""
+    var player2Color = ""
     
     var greenTurn: Bool = true
     var arrayChips: [Chip] = []
     
     var background = SKSpriteNode(imageNamed: "wall1.png")
     var turnlight = SKSpriteNode(imageNamed: "greenlight")
+    var turnLabel = SKLabelNode(text: "It is 's turn")
+    var winLabel = SKLabelNode(text: "")
     
     var redback = SKTexture(imageNamed: "red.jpg")
     var greenback = SKTexture(imageNamed: "green.jpg")
@@ -35,9 +41,11 @@ class GameScene: SKScene {
     
     
     override func didMoveToView(view: SKView) {
+        
         background.anchorPoint = CGPoint(x: 0, y: 0)
         background.position = CGPoint(x: 0, y: 0)
         background.size = self.size
+        background.zPosition = -100
         
         board.anchorPoint = CGPoint(x: 0, y: 0)
         board.position = CGPoint(x: 223, y: 0)
@@ -45,6 +53,11 @@ class GameScene: SKScene {
         
         turnlight.position = CGPoint(x: 513, y: 720)
         turnlight.setScale(0.25)
+        turnLabel.position = CGPoint(x: 513, y: 660)
+        winLabel.position = CGPoint(x: 513, y: 620)
+        winLabel.fontColor = UIColor.redColor()
+        winLabel.fontSize = 66
+        winLabel.fontName = "Chalkduster"
         
         greenwins.position = CGPoint(x: 500, y: 630)
         greenwins.hidden = true
@@ -58,7 +71,7 @@ class GameScene: SKScene {
         reset.setScale(0.25)
         reset.hidden = true
         
-
+        turnLabel.text = "It is " + player1 + "'s turn"
         
         
         self.addChild(background)
@@ -67,6 +80,8 @@ class GameScene: SKScene {
         self.addChild(reset)
         self.addChild(board)
         self.addChild(turnlight)
+        self.addChild(turnLabel)
+        self.addChild(winLabel)
 
         
         
@@ -130,19 +145,22 @@ class GameScene: SKScene {
         }
         
         if !topFilled {
+            self.runAction(SKAction.playSoundFileNamed("Tink.caf", waitForCompletion: false))
             var newChip = Chip(imageNamed: "greenchip")
         
         if greenTurn {
-            newChip.texture = SKTexture(imageNamed: "greenchip")
+            newChip.texture = SKTexture(imageNamed: player1Color)
             newChip.chipColor = "green"
             greenTurn = false
             turnlight.texture = redlight
+            turnLabel.text = "It is " + player2 + "'s turn"
         }
         else if !greenTurn {
-            newChip.texture = SKTexture(imageNamed: "redchip")
+            newChip.texture = SKTexture(imageNamed: player2Color)
             newChip.chipColor = "red"
             greenTurn = true
             turnlight.texture = greenlight
+            turnLabel.text = "It is " + player1 + "'s turn"
         }
         
         newChip.position = CGPoint(x: whatRow(position.x), y: position.y)
@@ -157,6 +175,8 @@ class GameScene: SKScene {
         reset.hidden = true
         redwins.hidden = true
         greenwins.hidden = true
+        turnLabel.hidden = false
+        winLabel.hidden = true
         for eachChip in arrayChips {
             eachChip.removeFromParent()
         }
@@ -175,7 +195,7 @@ class GameScene: SKScene {
     
     func checkforWinHelper(location: CGPoint, direction: String) {
         //myLabel1.text = String(counter)
-        if counter == 4 {
+        if counter == mode {
             gameover = true
         }
         for theChip in arrayChips {
@@ -286,17 +306,15 @@ class GameScene: SKScene {
         }
     }
     
-        
-        
-
-        
-
+    
     
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
+            
+
             if touch.locationInNode(self).y > 450 && !gameover {
                 addChip(touch.locationInNode(self))
             }
@@ -416,6 +434,7 @@ class GameScene: SKScene {
     }
     
     func allignChip(theChip: Chip) {
+        self.runAction(SKAction.playSoundFileNamed("thud.mp3", waitForCompletion: false))
         theChip.falling = false
         var height = theChip.position.y
         switch height {
@@ -450,9 +469,18 @@ class GameScene: SKScene {
                     checkforWin(theChip)
                     if gameover {
                         if theChip.chipColor == "green" {
-                            greenwins.hidden = false
-                        } else { redwins.hidden = false }
+                            winLabel.text = player1 + " Wins!!!"
+                            winLabel.hidden = false
+                            turnLabel.hidden = true
+                            //greenwins.hidden = false
+                        } else {
+                            winLabel.text = player2 + " Wins!!!"
+                            winLabel.hidden = false
+                            turnLabel.hidden = true
+                            //redwins.hidden = false 
+                        }
                         reset.hidden = false
+                        self.runAction(SKAction.playSoundFileNamed("claps.mp3", waitForCompletion: false))
                         for anyChip in arrayChips {
                             if anyChip.falling {
                                 anyChip.removeFromParent()
