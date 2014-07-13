@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA01E01419708D9400A5F4AD /* color2text.png in Resources */ = {isa = PBXBuildFile; fileRef = DA01E01219708D9400A5F4AD /* color2text.png */; };
 		DA01E01519708D9400A5F4AD /* color1text.png in Resources */ = {isa = PBXBuildFile; fileRef = DA01E01319708D9400A5F4AD /* color1text.png */; };
+		DA143CAB1970AD9F00D5C7BB /* chip.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DA143CAA1970AD9F00D5C7BB /* chip.atlas */; };
 		DA2E3AC1196C56B000A28DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AC0196C56B000A28DC4 /* AppDelegate.swift */; };
 		DA2E3AC3196C56B000A28DC4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AC2196C56B000A28DC4 /* GameScene.sks */; };
 		DA2E3AC5196C56B000A28DC4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AC4196C56B000A28DC4 /* GameScene.swift */; };
@@ -17,8 +18,6 @@
 		DA2E3ACC196C56B000A28DC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3ACB196C56B000A28DC4 /* Images.xcassets */; };
 		DA2E3AD8196C56B100A28DC4 /* Connect4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E3AD7196C56B100A28DC4 /* Connect4Tests.swift */; };
 		DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE2196C56DB00A28DC4 /* youwin.png */; };
-		DA2E3AE8196C56DB00A28DC4 /* redchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE3196C56DB00A28DC4 /* redchip.png */; };
-		DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE5196C56DB00A28DC4 /* greenchip.png */; };
 		DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AE6196C56DB00A28DC4 /* Board.png */; };
 		DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AEC196C56E500A28DC4 /* wall1.png */; };
 		DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA2E3AED196C56E500A28DC4 /* red.jpg */; };
@@ -43,15 +42,8 @@
 		DA4CF23E196F6CFD00C32450 /* button7.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF23D196F6CFD00C32450 /* button7.png */; };
 		DA4CF241196F961D00C32450 /* button4.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF23F196F961D00C32450 /* button4.png */; };
 		DA4CF242196F961D00C32450 /* button6.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF240196F961D00C32450 /* button6.png */; };
-		DA4CF24C196FD3CF00C32450 /* whitechip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF243196FD3CF00C32450 /* whitechip.png */; };
-		DA4CF24D196FD3CF00C32450 /* pinkchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF244196FD3CF00C32450 /* pinkchip.png */; };
-		DA4CF24E196FD3CF00C32450 /* blackchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF245196FD3CF00C32450 /* blackchip.png */; };
-		DA4CF24F196FD3CF00C32450 /* yellowchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF246196FD3CF00C32450 /* yellowchip.png */; };
-		DA4CF250196FD3CF00C32450 /* orangechip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF247196FD3CF00C32450 /* orangechip.png */; };
-		DA4CF251196FD3CF00C32450 /* tealchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF248196FD3CF00C32450 /* tealchip.png */; };
-		DA4CF252196FD3CF00C32450 /* purplechip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF249196FD3CF00C32450 /* purplechip.png */; };
-		DA4CF253196FD3CF00C32450 /* brownchip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF24A196FD3CF00C32450 /* brownchip.png */; };
-		DA4CF254196FD3CF00C32450 /* bluechip.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4CF24B196FD3CF00C32450 /* bluechip.png */; };
+		DAD7F0E719723CB6002F0725 /* boardcolortext.png in Resources */ = {isa = PBXBuildFile; fileRef = DAD7F0E619723CB6002F0725 /* boardcolortext.png */; };
+		DAF7B7F019725E00007950A0 /* toMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF7B7EF19725E00007950A0 /* toMenu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +66,7 @@
 /* Begin PBXFileReference section */
 		DA01E01219708D9400A5F4AD /* color2text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color2text.png; sourceTree = "<group>"; };
 		DA01E01319708D9400A5F4AD /* color1text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color1text.png; sourceTree = "<group>"; };
+		DA143CAA1970AD9F00D5C7BB /* chip.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = chip.atlas; sourceTree = "<group>"; };
 		DA2E3ABB196C56B000A28DC4 /* Connect4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connect4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2E3ABF196C56B000A28DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2E3AC0196C56B000A28DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +79,6 @@
 		DA2E3AD6196C56B100A28DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2E3AD7196C56B100A28DC4 /* Connect4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4Tests.swift; sourceTree = "<group>"; };
 		DA2E3AE2196C56DB00A28DC4 /* youwin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youwin.png; sourceTree = "<group>"; };
-		DA2E3AE3196C56DB00A28DC4 /* redchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redchip.png; sourceTree = "<group>"; };
-		DA2E3AE5196C56DB00A28DC4 /* greenchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenchip.png; sourceTree = "<group>"; };
 		DA2E3AE6196C56DB00A28DC4 /* Board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Board.png; sourceTree = "<group>"; };
 		DA2E3AEC196C56E500A28DC4 /* wall1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall1.png; sourceTree = "<group>"; };
 		DA2E3AED196C56E500A28DC4 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
@@ -112,15 +103,8 @@
 		DA4CF23D196F6CFD00C32450 /* button7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button7.png; sourceTree = "<group>"; };
 		DA4CF23F196F961D00C32450 /* button4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button4.png; sourceTree = "<group>"; };
 		DA4CF240196F961D00C32450 /* button6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button6.png; sourceTree = "<group>"; };
-		DA4CF243196FD3CF00C32450 /* whitechip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitechip.png; sourceTree = "<group>"; };
-		DA4CF244196FD3CF00C32450 /* pinkchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinkchip.png; sourceTree = "<group>"; };
-		DA4CF245196FD3CF00C32450 /* blackchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackchip.png; sourceTree = "<group>"; };
-		DA4CF246196FD3CF00C32450 /* yellowchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowchip.png; sourceTree = "<group>"; };
-		DA4CF247196FD3CF00C32450 /* orangechip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangechip.png; sourceTree = "<group>"; };
-		DA4CF248196FD3CF00C32450 /* tealchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tealchip.png; sourceTree = "<group>"; };
-		DA4CF249196FD3CF00C32450 /* purplechip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purplechip.png; sourceTree = "<group>"; };
-		DA4CF24A196FD3CF00C32450 /* brownchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brownchip.png; sourceTree = "<group>"; };
-		DA4CF24B196FD3CF00C32450 /* bluechip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechip.png; sourceTree = "<group>"; };
+		DAD7F0E619723CB6002F0725 /* boardcolortext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boardcolortext.png; sourceTree = "<group>"; };
+		DAF7B7EF19725E00007950A0 /* toMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toMenu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,13 +190,16 @@
 		DA2E3AE1196C56C700A28DC4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DA143CAA1970AD9F00D5C7BB /* chip.atlas */,
 				DA01E01219708D9400A5F4AD /* color2text.png */,
 				DA01E01319708D9400A5F4AD /* color1text.png */,
+				DAD7F0E619723CB6002F0725 /* boardcolortext.png */,
 				DA2E3B66196F31DB00A28DC4 /* button3.png */,
 				DA4CF23F196F961D00C32450 /* button4.png */,
 				DA4CF240196F961D00C32450 /* button6.png */,
 				DA2E3B67196F31DB00A28DC4 /* button5.png */,
 				DA4CF23D196F6CFD00C32450 /* button7.png */,
+				DAF7B7EF19725E00007950A0 /* toMenu.png */,
 				DA2E3B70196F57A100A28DC4 /* blackback.png */,
 				DA2E3B47196E10DC00A28DC4 /* redlight.png */,
 				DA2E3B4F196E206900A28DC4 /* start.png */,
@@ -225,17 +212,6 @@
 				DA2E3AED196C56E500A28DC4 /* red.jpg */,
 				DA2E3AEE196C56E500A28DC4 /* green.jpg */,
 				DA2E3AE2196C56DB00A28DC4 /* youwin.png */,
-				DA2E3AE3196C56DB00A28DC4 /* redchip.png */,
-				DA2E3AE5196C56DB00A28DC4 /* greenchip.png */,
-				DA4CF243196FD3CF00C32450 /* whitechip.png */,
-				DA4CF244196FD3CF00C32450 /* pinkchip.png */,
-				DA4CF245196FD3CF00C32450 /* blackchip.png */,
-				DA4CF246196FD3CF00C32450 /* yellowchip.png */,
-				DA4CF247196FD3CF00C32450 /* orangechip.png */,
-				DA4CF248196FD3CF00C32450 /* tealchip.png */,
-				DA4CF249196FD3CF00C32450 /* purplechip.png */,
-				DA4CF24A196FD3CF00C32450 /* brownchip.png */,
-				DA4CF24B196FD3CF00C32450 /* bluechip.png */,
 				DA2E3AE6196C56DB00A28DC4 /* Board.png */,
 			);
 			name = images;
@@ -335,43 +311,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2E3AE7196C56DB00A28DC4 /* youwin.png in Resources */,
-				DA4CF250196FD3CF00C32450 /* orangechip.png in Resources */,
-				DA4CF24F196FD3CF00C32450 /* yellowchip.png in Resources */,
 				DA2E3B68196F31DB00A28DC4 /* button3.png in Resources */,
 				DA2E3B5D196E8D4200A28DC4 /* latch.mp3 in Resources */,
 				DA01E01419708D9400A5F4AD /* color2text.png in Resources */,
 				DA2E3B50196E206900A28DC4 /* start.png in Resources */,
 				DA2E3B46196DFBFA00A28DC4 /* reset.png in Resources */,
 				DA4CF242196F961D00C32450 /* button6.png in Resources */,
+				DAD7F0E719723CB6002F0725 /* boardcolortext.png in Resources */,
 				DA2E3AF1196C56E500A28DC4 /* green.jpg in Resources */,
-				DA4CF24D196FD3CF00C32450 /* pinkchip.png in Resources */,
 				DA2E3AEF196C56E500A28DC4 /* wall1.png in Resources */,
 				DA2E3AF0196C56E500A28DC4 /* red.jpg in Resources */,
 				DA2E3B52196E2BF400A28DC4 /* Feartures to Add.rtf in Resources */,
-				DA4CF252196FD3CF00C32450 /* purplechip.png in Resources */,
 				DA01E01519708D9400A5F4AD /* color1text.png in Resources */,
-				DA2E3AE8196C56DB00A28DC4 /* redchip.png in Resources */,
-				DA4CF24E196FD3CF00C32450 /* blackchip.png in Resources */,
-				DA4CF253196FD3CF00C32450 /* brownchip.png in Resources */,
 				DA2E3B49196E10DC00A28DC4 /* redlight.png in Resources */,
 				DA2E3ACC196C56B000A28DC4 /* Images.xcassets in Resources */,
+				DAF7B7F019725E00007950A0 /* toMenu.png in Resources */,
 				DA2E3B6B196F501D00A28DC4 /* connect.png in Resources */,
 				DA4CF23E196F6CFD00C32450 /* button7.png in Resources */,
-				DA4CF251196FD3CF00C32450 /* tealchip.png in Resources */,
-				DA4CF254196FD3CF00C32450 /* bluechip.png in Resources */,
 				DA2E3B59196E833400A28DC4 /* thud.mp3 in Resources */,
 				DA2E3B5B196E866700A28DC4 /* claps.mp3 in Resources */,
 				DA2E3AEB196C56DB00A28DC4 /* Board.png in Resources */,
 				DA2E3B4A196E10DC00A28DC4 /* greenlight.png in Resources */,
 				DA2E3B71196F57A100A28DC4 /* blackback.png in Resources */,
 				DA2E3AC3196C56B000A28DC4 /* GameScene.sks in Resources */,
-				DA2E3AEA196C56DB00A28DC4 /* greenchip.png in Resources */,
-				DA4CF24C196FD3CF00C32450 /* whitechip.png in Resources */,
 				DA2E3B54196E35FA00A28DC4 /* Tink.caf in Resources */,
 				DA2E3B44196DF86A00A28DC4 /* greenwins.png in Resources */,
 				DA2E3ACA196C56B000A28DC4 /* Main.storyboard in Resources */,
 				DA2E3B43196DF86A00A28DC4 /* redwins.png in Resources */,
 				DA4CF241196F961D00C32450 /* button4.png in Resources */,
+				DA143CAB1970AD9F00D5C7BB /* chip.atlas in Resources */,
 				DA2E3B69196F31DB00A28DC4 /* button5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

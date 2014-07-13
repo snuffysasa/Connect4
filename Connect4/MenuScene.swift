@@ -18,6 +18,7 @@ class MenuScene: SKScene {
     var connectText = SKSpriteNode(imageNamed: "connect")
     var color1text = SKSpriteNode(imageNamed: "color1text")
     var color2text = SKSpriteNode(imageNamed: "color2text")
+    var boardcolortext = SKSpriteNode(imageNamed: "boardcolortext")
     var myFrame = CGRect(x: 0, y: 0, width: 200, height: 50)
     var selectorFrame = CGRect(x: 0, y: 0, width: 450, height: 120)
     var colorFrame = CGRect(x: 0, y: 0, width: 550, height: 30)
@@ -26,6 +27,7 @@ class MenuScene: SKScene {
     var selector = UISegmentedControl()
     var colorSelector = UISegmentedControl()
     var colorSelector2 = UISegmentedControl()
+    var boardColor = UISegmentedControl()
     
     
     override func didMoveToView(view: SKView) {
@@ -51,7 +53,7 @@ class MenuScene: SKScene {
         var stringarray: [NSString] = ["3","4","5","6","7"]
         selector = UISegmentedControl(items: stringarray)
         selector.frame = selectorFrame
-        selector.center = CGPoint(x: 374, y: 850)
+        selector.center = CGPoint(x: 374, y: 880)
         selector.tintColor = UIColor.redColor()
         selector.selectedSegmentIndex = 1
         //selector.backgroundColor = UIColor.whiteColor()
@@ -69,12 +71,20 @@ class MenuScene: SKScene {
         colorSelector2.tintColor = UIColor.whiteColor()
         colorSelector2.backgroundColor = UIColor.blackColor()
         colorSelector2.selectedSegmentIndex = 0
+        boardColor = UISegmentedControl(items: colorArray)
+        boardColor.frame = colorFrame
+        boardColor.center = CGPoint(x: 460, y: 350)
+        boardColor.tintColor = UIColor.whiteColor()
+        boardColor.backgroundColor = UIColor.blackColor()
+        boardColor.selectedSegmentIndex = 10
         connectText.position = CGPoint(x: 513, y: 700)
         color1text.position = CGPoint(x: 290, y: 575)
         color1text.setScale(0.4)
         color2text.position = CGPoint(x: 290, y: 545)
         color2text.setScale(0.4)
-        startButton.position = CGPoint(x: 513, y: 350)
+        boardcolortext.position = CGPoint(x: 290, y: 507)
+        boardcolortext.setScale(0.4)
+        startButton.position = CGPoint(x: 513, y: 320)
         threeButton.position = CGPoint(x: 309, y: 100)
         threeButton.setScale(0.25)
         fiveButton.position = CGPoint(x: 700, y: 100)
@@ -84,11 +94,13 @@ class MenuScene: SKScene {
         self.addChild(connectText)
         self.addChild(color1text)
         self.addChild(color2text)
+        self.addChild(boardcolortext)
         self.view.addSubview(textField)
         self.view.addSubview(textField2)
         self.view.addSubview(selector)
         self.view.addSubview(colorSelector)
         self.view.addSubview(colorSelector2)
+        self.view.addSubview(boardColor)
     }
     
 
@@ -100,17 +112,25 @@ class MenuScene: SKScene {
         newScene.scaleMode = SKSceneScaleMode.AspectFill
         
         for touch: AnyObject in touches {
-            newScene.player1 = textField.text
-            newScene.player2 = textField2.text
+            
             if CGRectContainsPoint(startButton.frame, touch.locationInNode(self)) {
+                if textField.text == "" {
+                    newScene.player1 = "Player 1"
+                } else {newScene.player1 = textField.text}
+                if textField2.text == "" {
+                    newScene.player2 = "Player 2"
+                } else {newScene.player2 = textField2.text}
+                
                 textField.removeFromSuperview()
                 textField2.removeFromSuperview()
                 selector.removeFromSuperview()
                 colorSelector.removeFromSuperview()
                 colorSelector2.removeFromSuperview()
+                boardColor.removeFromSuperview()
                 self.runAction(SKAction.playSoundFileNamed("latch.mp3", waitForCompletion: false))
                 
                 newScene.mode = selector.selectedSegmentIndex + 3
+                newScene.boardColor = stringToColor(boardColor.titleForSegmentAtIndex(boardColor.selectedSegmentIndex))
                 newScene.player1Color = colorSelector.titleForSegmentAtIndex(colorSelector.selectedSegmentIndex) + "chip"
                 newScene.player2Color = colorSelector2.titleForSegmentAtIndex(colorSelector2.selectedSegmentIndex) + "chip"
                 
@@ -121,6 +141,34 @@ class MenuScene: SKScene {
         }
         
         
+    }
+    
+    func stringToColor(thecolor: String) -> UIColor {
+        switch thecolor {
+        case "red":
+            return UIColor.redColor()
+        case "green":
+            return UIColor.greenColor()
+        case "white":
+            return UIColor.whiteColor()
+        case "pink":
+            return UIColor.magentaColor()
+        case "yellow":
+            return UIColor.yellowColor()
+        case "orange":
+            return UIColor.orangeColor()
+        case "teal":
+            return UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        case "purple":
+            return UIColor.purpleColor()
+        case "brown":
+            return UIColor.brownColor()
+        case "blue":
+            return UIColor.blueColor()
+        default:
+            return UIColor.blackColor()
+    
+        }
     }
     
     override func update(currentTime: CFTimeInterval) {
